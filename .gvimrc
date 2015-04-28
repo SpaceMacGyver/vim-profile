@@ -7,7 +7,7 @@ set history=1000
 ":set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 :set ruler
 :set hidden
-:set gfn=Ubuntu\ Mono\ 13
+:set gfn=Consolas:h14:cANSI
 :color slate
 :syn on
 :set bs=2
