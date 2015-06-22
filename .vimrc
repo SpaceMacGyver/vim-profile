@@ -27,3 +27,7 @@ imap action// add_action("mza", function() {});O	`za
 " Gists
 let g:gist_post_private = 1
 let g:gist_show_privates = 1
+
+" Javascript (TODO: break out into module)
+imap fu(( function() {}
+imap (fu(( ()ODafu((
