@@ -20,7 +20,7 @@ set autoindent
 :set incsearch
 imap ({} ({})O	
 imap (){} (){}O	
-imap {} {}O	
+imap {} {}O	mra
 
 imap action// add_action("mza", function() {});O	`za
 
@@ -30,4 +30,6 @@ let g:gist_show_privates = 1
 
 " Javascript (TODO: break out into module)
 imap fu(( function() {}
-imap (fu(( ()ODafu((
+imap (fu(( ();ODODafu((
+imap it( itmza(fu((;`rafail()`zOCa'', ODODi
+imap desc( describemza(fu((`zOCa'', ODODi
