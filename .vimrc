@@ -1,3 +1,5 @@
+:set nocompatible
+
 " Pathogen
 execute pathogen#infect()
 
@@ -24,19 +26,21 @@ imap (){} (){}O
 imap {} {}O	
 
 " JS
-imap func( function () {}
+imap func( () => {}
 imap clog /**/console.log();<Left><Left>a
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
 " Chai/Mocha
-imap it( it('', );<Left><Left>afunc(
-imap desc( describe('', );<Left><Left>afunc(
-imap before( before('', );<Left><Left>afunc(
-imap after( after('', );<Left><Left>afunc(
-imap beforeEach( beforeEach('', );<Left><Left>afunc(
-imap afterEach( afterEach('', );<Left><Left>afunc(
+function ConfigureMocha()
+    imap it( it('', );<Left><Left>afunc(
+    imap desc( describe('', );<Left><Left>afunc(
+    imap before( before('', );<Left><Left>afunc(
+    imap after( after('', );<Left><Left>afunc(
+    imap beforeEach( beforeEach('', );<Left><Left>afunc(
+    imap afterEach( afterEach('', );<Left><Left>afunc(
+endfunction
 
 " WP
 imap action// add_action("mza", function() {});O	`za
