@@ -21,16 +21,33 @@ set autoindent
 :let do_syntax_sel_menu = 1|runtime! synmenu.vim
 :filetype plugin on
 :set incsearch
-imap ({} ({})O	
-imap (){} (){}O	
-imap {} {}O	
 
-" JS
-imap func( () => {}
-imap clog /**/console.log();<Left><Left>a
-set tabstop=4
-set shiftwidth=4
-set expandtab
+function ConfigureBaseJs()
+    imap {} {}O	
+    imap clog /**/console.log();<Left><Left>a
+    set tabstop=4
+    set shiftwidth=4
+    set expandtab
+endfunction
+
+function ConfigureNewJs()
+    call ConfigureBaseJs()
+
+    imap <Leader>af () => {}
+    imap <Leader>wcl (maa)i() => {}`ai
+    imap <Leader>; %a;<Left>%i
+endfunction
+call ConfigureNewJs()
+
+function ConfigureDefaultJs()
+    call ConfigureBaseJs()
+
+    imap ({} ({})O	
+    imap (){} (){}O	
+
+    " JS
+    imap func( () => {}
+endfunction
 
 " Chai/Mocha
 function ConfigureMocha()
@@ -40,6 +57,10 @@ function ConfigureMocha()
     imap after( after('', );<Left><Left>afunc(
     imap beforeEach( beforeEach('', );<Left><Left>afunc(
     imap afterEach( afterEach('', );<Left><Left>afunc(
+endfunction
+
+function RefactorRequireToImport()
+    :'<,'>s/^\(.\{-}\) = require(\(.\{-})\)[,;]/import \1 from \2;
 endfunction
 
 " WP
@@ -52,7 +73,7 @@ let g:gist_show_privates = 1
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 " SyntasticToggleMode
