@@ -33,6 +33,7 @@ endfunction
 function ConfigureNewJs()
     call ConfigureBaseJs()
 
+    imap <Leader>() (maa);`aa
     imap <Leader>af () => {}
     imap <Leader>wcl (maa)i() => {}`ai
     imap <Leader>; %a;<Left>%i
