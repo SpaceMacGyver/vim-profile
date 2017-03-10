@@ -87,3 +87,5 @@ map ,qE <Plug>QuickFixBuffer
 map ,qs <Plug>QuickFixSave
 map ,ql <Plug>QuickFixLoad
 " QuickFix
+
+set wildignore+=node_modules
