@@ -15,16 +15,18 @@ set history=1000
 :set bs=2
 :set nu
 :set hlsearch
+hi Search ctermbg=13 ctermfg=0
 set autoindent
 :set list!
 :set listchars=tab:»·,trail:_,eol:$
 :let do_syntax_sel_menu = 1|runtime! synmenu.vim
 :filetype plugin on
+":filetype plugin indent on
 :set incsearch
 
 function ConfigureBaseJs()
     imap {} {}O	
-    imap clog /**/console.log();<Left><Left>a
+    imap <Leader>clog /**/console.log();<Left><Left>a
     set tabstop=4
     set shiftwidth=4
     set expandtab
@@ -65,8 +67,6 @@ function RefactorRequireToImport()
 endfunction
 
 " WP
-imap action// add_action("mza", function() {});O	`za
-
 " Gists
 let g:gist_post_private = 1
 let g:gist_show_privates = 1
@@ -89,3 +89,4 @@ map ,ql <Plug>QuickFixLoad
 " QuickFix
 
 set wildignore+=node_modules
+set wildignore+=lib
